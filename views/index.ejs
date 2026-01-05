@@ -5,8 +5,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Conversor de Moedas</title>
         <link rel="stylesheet" href="/css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     </head>
     <body>
+        <main class="caixa-principal">
 
+            <h1>Conversor de Moedas</h1>
+            
+            <div class="entradas">
+                <div class="de">
+                    <label for="valor-a-converter">De</label>
+                    <input type="number" class="form-control" id="valor-a-converter" name="valor-a-converter" placeholder="Digite o valor a converter" />
+                    <label for="moeda"></label>
+                    <%- include('partials/opcoes-de-moeda') %>
+                </div>
+
+                <button type="button" class="btn btn-outline-dark">Inverter</button>
+
+                <div class="para">
+                    <label for="valor-convertido">Para</label>
+                    <input type="number" class="form-control" id="valor-convertido" name="valor-convertido" placeholder="-" readonly/>
+                    <label for="moeda"></label>
+                    <%- include('partials/opcoes-de-moeda') %>
+                </div>
+            </div>
+
+            <input class="btn btn-primary" type="submit" value="Converter">
+
+            <div class="border border-primary resultado">
+                <ul>
+                    <li class="valor-convertido">VALOR CONVERTIDO</li>
+                    <li class="variacao">VARIAÇÃO</li>
+                    <li class="recomendacao">RECOMENDAÇÃO</li>
+                </ul>
+            </div>
+
+        </main>
     </body>
 </html>
