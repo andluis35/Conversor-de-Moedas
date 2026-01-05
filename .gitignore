@@ -1,0 +1,49 @@
+# ========================
+# Node.js
+# ========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ========================
+# Environment variables
+# ========================
+.env
+.env.local
+.env.*.local
+
+# ========================
+# OS / Editor
+# ========================
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+!.vscode/extensions.json
+
+# ========================
+# Logs
+# ========================
+logs/
+*.log
+
+# ========================
+# Coverage / Cache
+# ========================
+coverage/
+.cache/
+
+# ========================
+# Build / Output (caso futuramente exista)
+# ========================
+dist/
+build/
+
+# ========================
+# Temporary files
+# ========================
+tmp/
+temp/

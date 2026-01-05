@@ -1,0 +1,26 @@
+{
+  "name": "conversor-de-moedas",
+  "version": "1.0.0",
+  "description": "Projeto de Portfólio - Full Stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andluis35/Conversor-de-Moedas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/andluis35/Conversor-de-Moedas/issues"
+  },
+  "homepage": "https://github.com/andluis35/Conversor-de-Moedas#readme",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1"
+  }
+}
