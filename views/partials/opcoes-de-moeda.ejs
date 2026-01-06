@@ -1,165 +1,96 @@
-<select aria-label="Moedas de cada país" class="form-select" id="moeda" name="moeda" >
-    <option class="sem-moeda-selecionada" value="" selected disabled hidden>Selecione uma moeda</option>
-    <option value="AED">Dirham dos Emirados</option>
-    <option value="AFN">Afghani do Afeganistão</option>
-    <option value="ALL">Lek Albanês</option>
-    <option value="AMD">Dram Armênio</option>
-    <option value="ANG">Guilder das Antilhas</option>
-    <option value="AOA">Kwanza Angolano</option>
-    <option value="ARS">Peso Argentino</option>
-    <option value="AUD">Dólar Australiano</option>
-    <option value="AZN">Manat Azeri</option>
-    <option value="BAM">Marco Conversível</option>
-    <option value="BBD">Dólar de Barbados</option>
-    <option value="BDT">Taka de Bangladesh</option>
-    <option value="BGN">Lev Búlgaro</option>
-    <option value="BHD">Dinar do Bahrein</option>
-    <option value="BIF">Franco Burundinense</option>
-    <option value="BND">Dólar de Brunei</option>
-    <option value="BOB">Boliviano</option>
-    <option value="BRL">Real Brasileiro</option>
-    <option value="BRLT">Real Brasileiro Turismo</option>
-    <option value="BSD">Dólar das Bahamas</option>
-    <option value="BTC">Bitcoin</option>
-    <option value="BWP">Pula de Botswana</option>
-    <option value="BYN">Rublo Bielorrusso</option>
-    <option value="BZD">Dólar de Belize</option>
-    <option value="CAD">Dólar Canadense</option>
-    <option value="CHF">Franco Suíço</option>
-    <option value="CHFRTS">Franco Suíço</option>
-    <option value="CLP">Peso Chileno</option>
-    <option value="CNH">Yuan Chinês Offshore</option>
-    <option value="CNY">Yuan Chinês</option>
-    <option value="COP">Peso Colombiano</option>
-    <option value="CRC">Colón Costarriquenho</option>
-    <option value="CUP">Peso Cubano</option>
-    <option value="CVE">Escudo Cabo-Verdiano</option>
-    <option value="CZK">Coroa Checa</option>
-    <option value="DJF">Franco do Djubouti</option>
-    <option value="DKK">Coroa Dinamarquesa</option>
-    <option value="DOGE">Dogecoin</option>
-    <option value="DOP">Peso Dominicano</option>
-    <option value="DZD">Dinar Argelino</option>
-    <option value="EGP">Libra Egípcia</option>
-    <option value="ETB">Birr Etíope</option>
-    <option value="ETH">Ethereum</option>
-    <option value="EUR">Euro</option>
-    <option value="FJD">Dólar de Fiji</option>
-    <option value="GBP">Libra Esterlina</option>
-    <option value="GEL">Lari Georgiano</option>
-    <option value="GHS">Cedi Ganês</option>
-    <option value="GMD">Dalasi da Gâmbia</option>
-    <option value="GNF">Franco de Guiné</option>
-    <option value="GTQ">Quetzal Guatemalteco</option>
-    <option value="HKD">Dólar de Hong Kong</option>
-    <option value="HNL">Lempira Hondurenha</option>
-    <option value="HRK">Kuna Croata</option>
-    <option value="HTG">Gourde Haitiano</option>
-    <option value="HUF">Florim Húngaro</option>
-    <option value="IDR">Rupia Indonésia</option>
-    <option value="ILS">Novo Shekel Israelense</option>
-    <option value="INR">Rúpia Indiana</option>
-    <option value="IQD">Dinar Iraquiano</option>
-    <option value="IRR">Rial Iraniano</option>
-    <option value="ISK">Coroa Islandesa</option>
-    <option value="JMD">Dólar Jamaicano</option>
-    <option value="JOD">Dinar Jordaniano</option>
-    <option value="JPY">Iene Japonês</option>
-    <option value="JPYRTS">Iene Japonês</option>
-    <option value="KES">Shilling Queniano</option>
-    <option value="KGS">Som Quirguistanês</option>
-    <option value="KHR">Riel Cambojano</option>
-    <option value="KMF">Franco Comorense</option>
-    <option value="KRW">Won Sul-Coreano</option>
-    <option value="KWD">Dinar Kuwaitiano</option>
-    <option value="KYD">Dólar das Ilhas Cayman</option>
-    <option value="KZT">Tengue Cazaquistanês</option>
-    <option value="LAK">Kip Laosiano</option>
-    <option value="LBP">Libra Libanesa</option>
-    <option value="LKR">Rúpia de Sri Lanka</option>
-    <option value="LSL">Loti do Lesoto</option>
-    <option value="LTC">Litecoin</option>
-    <option value="LYD">Dinar Líbio</option>
-    <option value="MAD">Dirham Marroquino</option>
-    <option value="MDL">Leu Moldavo</option>
-    <option value="MGA">Ariary Madagascarense</option>
-    <option value="MKD">Denar Macedônio</option>
-    <option value="MMK">Kyat de Mianmar</option>
-    <option value="MNT">Mongolian Tugrik</option>
-    <option value="MOP">Pataca de Macau</option>
-    <option value="MRO">Ouguiya Mauritana</option>
-    <option value="MUR">Rúpia Mauriciana</option>
-    <option value="MVR">Rufiyaa Maldiva</option>
-    <option value="MWK">Kwacha Malauiana</option>
-    <option value="MXN">Peso Mexicano</option>
-    <option value="MYR">Ringgit Malaio</option>
-    <option value="MZN">Metical de Moçambique</option>
-    <option value="NAD">Dólar Namíbio</option>
-    <option value="NGN">Naira Nigeriana</option>
-    <option value="NGNI">Naira Nigeriana</option>
-    <option value="NGNPARALLEL">Naira Nigeriana</option>
-    <option value="NIO">Córdoba Nicaraguense</option>
-    <option value="NOK">Coroa Norueguesa</option>
-    <option value="NPR">Rúpia Nepalesa</option>
-    <option value="NZD">Dólar Neozelandês</option>
-    <option value="OMR">Rial Omanense</option>
-    <option value="PAB">Balboa Panamenho</option>
-    <option value="PEN">Sol do Peru</option>
-    <option value="PGK">Kina Papua-Nova Guiné</option>
-    <option value="PHP">Peso Filipino</option>
-    <option value="PKR">Rúpia Paquistanesa</option>
-    <option value="PLN">Zlóti Polonês</option>
-    <option value="PYG">Guarani Paraguaio</option>
-    <option value="QAR">Rial Catarense</option>
-    <option value="RON">Leu Romeno</option>
-    <option value="RSD">Dinar Sérvio</option>
-    <option value="RUB">Rublo Russo</option>
-    <option value="RUBTOD">Rublo Russo</option>
-    <option value="RUBTOM">Rublo Russo</option>
-    <option value="RWF">Franco Ruandês</option>
-    <option value="SAR">Riyal Saudita</option>
-    <option value="SCR">Rúpias de Seicheles</option>
-    <option value="SDG">Libra Sudanesa</option>
-    <option value="SDR">DSE</option>
-    <option value="SEK">Coroa Sueca</option>
-    <option value="SGD">Dólar de Cingapura</option>
-    <option value="SOS">Shilling Somaliano</option>
-    <option value="STD">Dobra São Tomé/Príncipe</option>
-    <option value="SVC">Colon de El Salvador</option>
-    <option value="SYP">Libra Síria</option>
-    <option value="SZL">Lilangeni Suazilandês</option>
-    <option value="THB">Baht Tailandês</option>
-    <option value="TJS">Somoni do Tajiquistão</option>
-    <option value="TMT">TMT</option>
-    <option value="TND">Dinar Tunisiano</option>
-    <option value="TRY">Nova Lira Turca</option>
-    <option value="TTD">Dólar de Trinidad</option>
-    <option value="TWD">Dólar Taiuanês</option>
-    <option value="TZS">Shilling Tanzaniano</option>
-    <option value="UAH">Hryvinia Ucraniana</option>
-    <option value="UGX">Shilling Ugandês</option>
-    <option value="USD">Dólar Americano</option>
-    <option value="USDT">Dólar Americano</option>
-    <option value="UYU">Peso Uruguaio</option>
-    <option value="UZS">Som Uzbequistanês</option>
-    <option value="VEF">Bolívar Venezuelano</option>
-    <option value="VND">Dong Vietnamita</option>
-    <option value="VUV">Vatu de Vanuatu</option>
-    <option value="XAF">Franco CFA Central</option>
-    <option value="XAGG">Prata</option>
-    <option value="XBR">Brent Spot</option>
-    <option value="XCD">Dólar do Caribe Oriental</option>
-    <option value="XOF">Franco CFA Ocidental</option>
-    <option value="XPF">Franco CFP</option>
-    <option value="XRP">XRP</option>
-    <option value="YER">Riyal Iemenita</option>
-    <option value="ZAR">Rand Sul-Africano</option>
-    <option value="ZMK">Kwacha Zambiana</option>
-    <option value="ZWL">Dólar Zimbabuense</option>
-    <option value="XAU">Ouro</option>
-    <option value="BRLPTAX">Real Brasileiro</option>
-    <option value="XAG">Prata Spot</option>
-    <option value="BRETT">Brett</option>
-    <option value="SOL">Solana</option>
-    <option value="BNB">Binance Coin</option>
-</select>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle botao-moeda" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Selecione uma moeda
+    </button>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#" data-currency="AED"><span class="fi fi-ae me-2"></span>Dirham dos Emirados (AED)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="AFN"><span class="fi fi-af me-2"></span>Afghani do Afeganistão (AFN)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="ALL"><span class="fi fi-al me-2"></span>Lek Albanês (ALL)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="AMD"><span class="fi fi-am me-2"></span>Dram Armênio (AMD)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="ANG"><span class="fi fi-cw me-2"></span>Guilder das Antilhas (ANG)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="AOA"><span class="fi fi-ao me-2"></span>Kwanza Angolano (AOA)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="ARS"><span class="fi fi-ar me-2"></span>Peso Argentino (ARS)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="AUD"><span class="fi fi-au me-2"></span>Dólar Australiano (AUD)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="AZN"><span class="fi fi-az me-2"></span>Manat Azeri (AZN)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BAM"><span class="fi fi-ba me-2"></span>Marco Conversível (BAM)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BBD"><span class="fi fi-bb me-2"></span>Dólar de Barbados (BBD)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BDT"><span class="fi fi-bd me-2"></span>Taka de Bangladesh (BDT)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BGN"><span class="fi fi-bg me-2"></span>Lev Búlgaro (BGN)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BHD"><span class="fi fi-bh me-2"></span>Dinar do Bahrein (BHD)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BIF"><span class="fi fi-bi me-2"></span>Franco Burundinense (BIF)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BND"><span class="fi fi-bn me-2"></span>Dólar de Brunei (BND)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BOB"><span class="fi fi-bo me-2"></span>Boliviano (BOB)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BRL"><span class="fi fi-br me-2"></span>Real Brasileiro (BRL)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BSD"><span class="fi fi-bs me-2"></span>Dólar das Bahamas (BSD)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BWP"><span class="fi fi-bw me-2"></span>Pula de Botswana (BWP)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BYN"><span class="fi fi-by me-2"></span>Rublo Bielorrusso (BYN)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BZD"><span class="fi fi-bz me-2"></span>Dólar de Belize (BZD)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="CAD"><span class="fi fi-ca me-2"></span>Dólar Canadense (CAD)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="CHF"><span class="fi fi-ch me-2"></span>Franco Suíço (CHF)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="CLP"><span class="fi fi-cl me-2"></span>Peso Chileno (CLP)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="CNY"><span class="fi fi-cn me-2"></span>Yuan Chinês (CNY)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="COP"><span class="fi fi-co me-2"></span>Peso Colombiano (COP)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="CRC"><span class="fi fi-cr me-2"></span>Colón Costarriquenho (CRC)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="CUP"><span class="fi fi-cu me-2"></span>Peso Cubano (CUP)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="CVE"><span class="fi fi-cv me-2"></span>Escudo Cabo-Verdiano (CVE)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="CZK"><span class="fi fi-cz me-2"></span>Coroa Checa (CZK)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="DKK"><span class="fi fi-dk me-2"></span>Coroa Dinamarquesa (DKK)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="DOP"><span class="fi fi-do me-2"></span>Peso Dominicano (DOP)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="DZD"><span class="fi fi-dz me-2"></span>Dinar Argelino (DZD)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="EGP"><span class="fi fi-eg me-2"></span>Libra Egípcia (EGP)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="ETB"><span class="fi fi-et me-2"></span>Birr Etíope (ETB)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="EUR"><span class="fi fi-eu me-2"></span>Euro (EUR)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="GBP"><span class="fi fi-gb me-2"></span>Libra Esterlina (GBP)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="HKD"><span class="fi fi-hk me-2"></span>Dólar de Hong Kong (HKD)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="IDR"><span class="fi fi-id me-2"></span>Rupia Indonésia (IDR)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="ILS"><span class="fi fi-il me-2"></span>Novo Shekel Israelense (ILS)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="INR"><span class="fi fi-in me-2"></span>Rúpia Indiana (INR)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="JPY"><span class="fi fi-jp me-2"></span>Iene Japonês (JPY)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="KRW"><span class="fi fi-kr me-2"></span>Won Sul-Coreano (KRW)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="MXN"><span class="fi fi-mx me-2"></span>Peso Mexicano (MXN)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="NOK"><span class="fi fi-no me-2"></span>Coroa Norueguesa (NOK)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="NZD"><span class="fi fi-nz me-2"></span>Dólar Neozelandês (NZD)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="PEN"><span class="fi fi-pe me-2"></span>Sol do Peru (PEN)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="PLN"><span class="fi fi-pl me-2"></span>Zlóti Polonês (PLN)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="PYG"><span class="fi fi-py me-2"></span>Guarani Paraguaio (PYG)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="RON"><span class="fi fi-ro me-2"></span>Leu Romeno (RON)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="RUB"><span class="fi fi-ru me-2"></span>Rublo Russo (RUB)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="SEK"><span class="fi fi-se me-2"></span>Coroa Sueca (SEK)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="SGD"><span class="fi fi-sg me-2"></span>Dólar de Cingapura (SGD)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="THB"><span class="fi fi-th me-2"></span>Baht Tailandês (THB)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="TRY"><span class="fi fi-tr me-2"></span>Nova Lira Turca (TRY)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="UAH"><span class="fi fi-ua me-2"></span>Hryvinia Ucraniana (UAH)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="USD"><span class="fi fi-us me-2"></span>Dólar Americano (USD)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="UYU"><span class="fi fi-uy me-2"></span>Peso Uruguaio (UYU)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="ZAR"><span class="fi fi-za me-2"></span>Rand Sul-Africano (ZAR)</a></li>
+
+        <!-- Variações BR -->
+        <li><a class="dropdown-item" href="#" data-currency="BRLT"><span class="fi fi-br me-2"></span>Real Brasileiro - Turismo (BRLT)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BRLPTAX"><span class="fi fi-br me-2"></span>Real Brasileiro - PTAX (BRLPTAX)</a></li>
+
+        <!-- Offshore / derivados -->
+        <li><a class="dropdown-item" href="#" data-currency="CNH"><span class="fi fi-cn me-2"></span>Yuan Chinês Offshore (CNH)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="JPYRTS"><span class="fi fi-jp me-2"></span>Iene Japonês - RTS (JPYRTS)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="CHFRTS"><span class="fi fi-ch me-2"></span>Franco Suíço - RTS (CHFRTS)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="RUBTOD"><span class="fi fi-ru me-2"></span>Rublo Russo - TOD (RUBTOD)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="RUBTOM"><span class="fi fi-ru me-2"></span>Rublo Russo - TOM (RUBTOM)</a></li>
+
+        <!-- Criptos / Commodities (sem bandeira oficial) -->
+        <li><a class="dropdown-item" href="#" data-currency="BTC"><img src="/images/bitcoin.png" alt="bitcoin crypto icon" class="crypto-icon">Bitcoin (BTC)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="ETH"><img src="/images/ethereum.png" alt="ethereum crypto icon" class="crypto-icon">Ethereum (ETH)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="USDT"><img src="/images/tether.png" alt="tether crypto icon" class="crypto-icon">Tether (USDT)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="XRP"><img src="/images/xrp.png" alt="xrp crypto icon" class="crypto-icon">XRP (XRP)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="LTC"><img src="/images/litecoin.png" alt="litecoin crypto icon" class="crypto-icon">Litecoin (LTC)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="DOGE"><img src="/images/dogecoin.png" alt="dogecoin crypto icon" class="crypto-icon">Dogecoin (DOGE)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="SOL"><img src="/images/solana.png" alt="solana crypto icon" class="crypto-icon">Solana (SOL)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BNB"><img src="/images/binance.png" alt="binance crypto icon" class="crypto-icon">Binance Coin (BNB)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="BRETT"><img src="/images/brett.png" alt="brett crypto icon" class="crypto-icon">Brett (BRETT)</a></li>
+
+        <li><a class="dropdown-item" href="#" data-currency="XAU">🟡 Ouro (XAU)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="XAG">⚪ Prata Spot (XAG)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="XAGG">⚪ Prata (XAGG)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="XBR">🛢️ Brent Spot (XBR)</a></li>
+        <li><a class="dropdown-item" href="#" data-currency="SDR">🏦 DSE (SDR)</a></li>
+    </ul>
+
+</div>
