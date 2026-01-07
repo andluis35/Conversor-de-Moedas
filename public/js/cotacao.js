@@ -1,6 +1,7 @@
+let moedaDe = null;
+let moedaPara = null;
+
 document.addEventListener('DOMContentLoaded', () => {
-    let moedaDe = null;
-    let moedaPara = null;
     const dropdowns = document.querySelectorAll('.moeda-dropdown');
 
     dropdowns.forEach(dropdown => {
@@ -22,14 +23,46 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log(`Moeda PARA: ${moedaPara}`);
                 }
 
-                if (moedaDe && moedaPara) {
-                    buscarCotacao(moedaDe, moedaPara);
-                }
-
+                atualizarCotacao();
             })
         })
     })
 });
+
+document.getElementById('valor-a-converter').addEventListener('input', () => {
+    atualizarConversao();
+});
+
+function atualizarConversao() {
+    const valorInput = document.getElementById('valor-a-converter');
+    const valorOutput = document.getElementById('valor-convertido');
+    const valor = parseFloat(valorInput.value);
+
+    if (!valorInput.value || isNaN(valor)) {
+        valorOutput.value = '';
+        return;
+    }
+
+    if (!moedaDe || !moedaPara) {
+        return;
+    }
+
+    const taxa = parseFloat(document.querySelector('.taxa-conversao').innerText);
+
+    if (!taxa) {
+        return;
+    }
+
+    const valorConvertido = valor * taxa;
+
+    valorOutput.value = valorConvertido.toFixed(2);
+}
+
+function atualizarCotacao() {
+    if (moedaDe && moedaPara) {
+        buscarCotacao(moedaDe, moedaPara);
+    }
+}
 
 async function buscarCotacao(de, para) {
 
