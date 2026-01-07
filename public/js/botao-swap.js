@@ -6,15 +6,7 @@ botaoSwap.addEventListener('click', () => {
     let botaoPara = dropdowns[1].querySelector('.botao-moeda');
     let tempBotao = '';
 
-    let valorAConverter = document.getElementById('valor-a-converter');
-    let valorConvertido = document.getElementById('valor-convertido');
-    let tempValor = '';
-
     tempBotao = botaoDe.innerHTML;
     botaoDe.innerHTML = botaoPara.innerHTML;
     botaoPara.innerHTML = tempBotao;
-
-    tempValor = valorAConverter.value;
-    valorAConverter.value = valorConvertido.value;
-    valorConvertido.value = tempValor;
 });
