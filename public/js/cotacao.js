@@ -18,12 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (dropdown.closest('.de')) {
                     moedaDe = sigla;
-                    console.log(`Moeda DE: ${moedaDe}`);
                 }
 
                 if (dropdown.closest('.para')) {
                     moedaPara = sigla;
-                    console.log(`Moeda PARA: ${moedaPara}`);
                 }
 
                 atualizarCotacao();
@@ -88,13 +86,28 @@ async function buscarCotacao(de, para) {
         });
 
         const data = await res.json();
-        document.querySelector('.taxa-conversao').innerText = data.bid;
-        document.querySelector('.variacao').innerText = data.varBid;
+        document.querySelector('.taxa-conversao').innerText = `${data.bid} ℹ️`;
+        document.querySelector('.variacao').innerText = `${data.varBid} ℹ️`;
 
         atualizarConversao();
+        definirRecomendacao(data);
     }
     catch (error) {
         console.log(error);
     }
     
+}
+
+function definirRecomendacao(data) {
+    const contextoEconomico = document.querySelector('.recomendacao');
+    const variacao = parseFloat(data.pctChange).toFixed(2);
+    if (data.pctChange < 0) {
+        contextoEconomico.innerText = `✅ ${data.code} caiu ${variacao}%. Converter hoje está mais barato ℹ️`;
+    }
+    else if (data.pctChange > 0) {
+        contextoEconomico.innerText = `❌ ${data.code} subiu ${variacao}%. Converter hoje está mais caro ℹ️`;
+    }
+    else {
+        contextoEconomico.innerText = `➖ ${data.code} manteve-se estável. Conversão sem impacto relevante ℹ️`;
+    }
 }
