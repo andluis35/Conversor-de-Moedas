@@ -1,3 +1,6 @@
+const valorInput = document.getElementById('valor-a-converter');
+const valorOutput = document.getElementById('valor-convertido');
+const botaoSwap = document.querySelector('.botao-swap');
 let moedaDe = null;
 let moedaPara = null;
 
@@ -24,18 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 atualizarCotacao();
+                atualizarConversao();
             })
         })
     })
-});
 
-document.getElementById('valor-a-converter').addEventListener('input', () => {
-    atualizarConversao();
+    valorInput.addEventListener('input', () => {
+        atualizarConversao();
+    });
+
+    botaoSwap.addEventListener('click', () => {
+        if (!moedaDe || !moedaPara) {
+            return;
+        }
+        [moedaDe, moedaPara] = [moedaPara, moedaDe];
+
+        atualizarCotacao();
+        atualizarConversao();
+    })
 });
 
 function atualizarConversao() {
-    const valorInput = document.getElementById('valor-a-converter');
-    const valorOutput = document.getElementById('valor-convertido');
     const valor = parseFloat(valorInput.value);
 
     if (!valorInput.value || isNaN(valor)) {
@@ -78,6 +90,8 @@ async function buscarCotacao(de, para) {
         const data = await res.json();
         document.querySelector('.taxa-conversao').innerText = data.bid;
         document.querySelector('.variacao').innerText = data.varBid;
+
+        atualizarConversao();
     }
     catch (error) {
         console.log(error);
