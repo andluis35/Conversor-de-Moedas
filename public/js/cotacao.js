@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const dropdowns = document.querySelectorAll('.moeda-dropdown');
         let botaoDe = dropdowns[0].querySelector('.botao-moeda');
         let botaoPara = dropdowns[1].querySelector('.botao-moeda');
-        let tempBotao = '';
 
         [botaoDe.innerHTML, botaoPara.innerHTML] = [botaoPara.innerHTML, botaoDe.innerHTML];
 
@@ -64,7 +63,7 @@ function atualizarConversao() {
         return;
     }
 
-    const taxa = parseFloat(document.querySelector('.taxa-conversao').innerText);
+    const taxa = parseFloat(document.querySelector('.valor-taxa').innerText);
 
     if (!taxa) {
         return;
@@ -82,7 +81,6 @@ function atualizarCotacao() {
 }
 
 async function buscarCotacao(de, para) {
-
     try {
         const res = await fetch('/cotacao', {
             method: 'POST',
@@ -93,19 +91,32 @@ async function buscarCotacao(de, para) {
         });
 
         const data = await res.json();
+        const valorVariacao = parseFloat(data.varBid).toFixed(2);
+        let emojiVariacao = '➖';
+
+        if (valorVariacao < 0) {
+            emojiVariacao = '📉';
+        }
+        else if (valorVariacao > 0) {
+            emojiVariacao = '📈';
+        }
+
 
         document.querySelector('.taxa-conversao').innerHTML =
-        `${data.bid}
+        `Taxa de Conversão
         <span class="info" data-bs-placement="bottom" title="Indica quanto vale 1 unidade da moeda escolhida em relação à outra. É essa taxa que usamos para calcular o valor convertido.">
             <i class="bi bi-info-circle"></i>
-        </span>`;
-
+        </span>
+        <br />
+        <span class="valor-taxa">${data.bid}</span>`;
 
         document.querySelector('.variacao').innerHTML =
-        `${data.varBid}
+        `Variação atualizada
         <span class="info" data-bs-placement="bottom" title="Mostra quanto o preço subiu ou caiu (em VALOR) em relação à cotação anterior.">
             <i class="bi bi-info-circle"></i>
-        </span>`;
+        </span>
+        <br />
+        ${emojiVariacao} ${data.varBid}`;
 
         atualizarConversao();
         definirRecomendacao(data);
@@ -121,7 +132,7 @@ function definirRecomendacao(data) {
     const contextoEconomico = document.querySelector('.recomendacao');
     const variacao = parseFloat(data.pctChange).toFixed(2);
 
-    if (data.pctChange < 0) {
+    if (variacao < 0) {
         contextoEconomico.innerHTML =
             `✅ ${data.code} caiu ${variacao}%.
             Converter hoje está mais barato!
@@ -129,7 +140,7 @@ function definirRecomendacao(data) {
                 <i class="bi bi-info-circle"></i>
             </span>`;
     }
-    else if (data.pctChange > 0) {
+    else if (variacao > 0) {
         contextoEconomico.innerHTML =
             `❌ ${data.code} subiu ${variacao}%.
             Converter hoje está mais caro!

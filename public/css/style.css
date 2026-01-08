@@ -69,11 +69,19 @@ li {
     height: 64px;
 }
 
-.resultado {
+.resultado-taxas, .resultado-contextual {
     display: flex;
     flex-direction: row;
+    padding: 12px;
+    margin: 0;
+}
+
+.resultado-taxas {
     justify-content: space-between;
-    padding: 0;
+}
+
+.resultado-contextual {
+    justify-content: center;
 }
 
 .crypto-icon {
