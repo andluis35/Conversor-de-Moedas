@@ -28,8 +28,9 @@ app.post('/cotacao', async (req, res) => {
         res.json(cotacao);
     }
     catch (error) {
-        console.log(error);
-        res.status(500).json({ erro: 'Erro ao buscar cotação' });
+        if (error.response && error.response.status === 404) {
+            return res.status(404).json({ erro: 'Cotação não encontrada' });
+        }
     }
 })
 

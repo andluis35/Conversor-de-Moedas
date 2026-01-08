@@ -89,7 +89,12 @@ async function buscarCotacao(de, para) {
             },
             body: JSON.stringify({ de, para })
         });
-
+        
+        if (!res.ok) {
+            mostrarErroCotacao();
+            return;
+        }
+        
         const data = await res.json();
         const valorVariacao = parseFloat(data.varBid);
         let emojiVariacao = '➖';
@@ -156,4 +161,19 @@ function definirRecomendacao(data) {
                 <i class="bi bi-info-circle"></i>
             </span>`;
     }
+}
+
+function mostrarErroCotacao() {
+    document.querySelector('.taxa-conversao').innerHTML = `⚠️ Cotação indisponível`;
+    document.querySelector('.variacao').innerHTML = `—`;
+    document.querySelector('.recomendacao').innerHTML = `Essa conversão não está disponível no momento.`;
+    document.getElementById('valor-convertido').value = '';
+
+    document.getElementById('modalErroMensagem').innerText =
+        'Não há cotação disponível para essa combinação de moedas.';
+
+    const modal = new bootstrap.Modal(
+        document.getElementById('modalErroCotacao')
+    );
+    modal.show();
 }
