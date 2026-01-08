@@ -93,8 +93,19 @@ async function buscarCotacao(de, para) {
         });
 
         const data = await res.json();
-        document.querySelector('.taxa-conversao').innerText = `${data.bid} ℹ️`;
-        document.querySelector('.variacao').innerText = `${data.varBid} ℹ️`;
+
+        document.querySelector('.taxa-conversao').innerHTML =
+        `${data.bid}
+        <span class="info" data-bs-placement="bottom" title="Indica quanto vale 1 unidade da moeda escolhida em relação à outra. É essa taxa que usamos para calcular o valor convertido.">
+            <i class="bi bi-info-circle"></i>
+        </span>`;
+
+
+        document.querySelector('.variacao').innerHTML =
+        `${data.varBid}
+        <span class="info" data-bs-placement="bottom" title="Mostra quanto o preço subiu ou caiu (em VALOR) em relação à cotação anterior.">
+            <i class="bi bi-info-circle"></i>
+        </span>`;
 
         atualizarConversao();
         definirRecomendacao(data);
@@ -106,15 +117,32 @@ async function buscarCotacao(de, para) {
 }
 
 function definirRecomendacao(data) {
+
     const contextoEconomico = document.querySelector('.recomendacao');
     const variacao = parseFloat(data.pctChange).toFixed(2);
+
     if (data.pctChange < 0) {
-        contextoEconomico.innerText = `✅ ${data.code} caiu ${variacao}%. Converter hoje está mais barato ℹ️`;
+        contextoEconomico.innerHTML =
+            `✅ ${data.code} caiu ${variacao}%.
+            Converter hoje está mais barato!
+            <span class="info" data-bs-placement="bottom" title="A queda indica redução no valor da moeda.">
+                <i class="bi bi-info-circle"></i>
+            </span>`;
     }
     else if (data.pctChange > 0) {
-        contextoEconomico.innerText = `❌ ${data.code} subiu ${variacao}%. Converter hoje está mais caro ℹ️`;
+        contextoEconomico.innerHTML =
+            `❌ ${data.code} subiu ${variacao}%.
+            Converter hoje está mais caro!
+            <span class="info" data-bs-placement="bottom" title="Quando a moeda sobe, é necessário mais dinheiro para adquiri-la.">
+                <i class="bi bi-info-circle"></i>
+            </span>`;
     }
     else {
-        contextoEconomico.innerText = `➖ ${data.code} manteve-se estável. Conversão sem impacto relevante ℹ️`;
+        contextoEconomico.innerHTML =
+            `➖ ${data.code} manteve-se estável.
+            Conversão sem impacto relevante!
+            <span class="info" data-bs-placement="bottom" title="A variação foi mínima em relação ao dia anterior.">
+                <i class="bi bi-info-circle"></i>
+            </span>`;
     }
 }
