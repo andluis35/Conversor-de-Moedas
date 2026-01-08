@@ -39,6 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         [moedaDe, moedaPara] = [moedaPara, moedaDe];
+        
+        const dropdowns = document.querySelectorAll('.moeda-dropdown');
+        let botaoDe = dropdowns[0].querySelector('.botao-moeda');
+        let botaoPara = dropdowns[1].querySelector('.botao-moeda');
+        let tempBotao = '';
+
+        [botaoDe.innerHTML, botaoPara.innerHTML] = [botaoPara.innerHTML, botaoDe.innerHTML];
 
         atualizarCotacao();
         atualizarConversao();
