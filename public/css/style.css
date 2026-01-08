@@ -41,7 +41,7 @@ li {
 }
 
 .container h1 {
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .container h4 {
@@ -79,8 +79,12 @@ li {
 .resultado-taxas, .resultado-contextual {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 12px;
     margin: 0;
+    background-color: #BBE0EF;
+    border-radius: 6px;
+    height: 72px;
 }
 
 .resultado-taxas {
@@ -133,13 +137,22 @@ li {
 
 .creditos .nav-link {
     display: flex;
+    border-bottom: 2px solid transparent;
 }
 
 .creditos  .nav-link:hover {
-    background-color: #BBE0EF;
-    transform: translateY(-5px);
+    border-bottom: 2px solid #0d6efd;
     transition: background-color 0.3s ease;
     border-radius: 6px;
+}
+
+.icon {
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover .icon {
+    transform: translateY(-4px) scale(1.08);
 }
 
 .dropdown-menu .dropdown-item {
@@ -183,4 +196,12 @@ li {
     color: #d9d9d9;
     transform: translateY(-5px);
     transition: background-color 0.3s ease;
+}
+
+.label-cinza {
+    color: #606060
+}
+
+.texto-negrito {
+    font-weight: 800;
 }

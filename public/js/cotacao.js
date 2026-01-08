@@ -108,20 +108,20 @@ async function buscarCotacao(de, para) {
 
 
         document.querySelector('.taxa-conversao').innerHTML =
-        `Taxa de Conversão
+        `<span class='label-cinza'>Taxa de Conversão</span>
         <span class="info" data-bs-placement="bottom" title="Indica quanto vale 1 unidade da moeda escolhida em relação à outra. É essa taxa que usamos para calcular o valor convertido.">
             <i class="bi bi-info-circle"></i>
         </span>
         <br />
-        <span class="valor-taxa">${data.bid}</span>`;
+        <span class="valor-taxa texto-negrito">${data.bid}</span>`;
 
         document.querySelector('.variacao').innerHTML =
-        `Variação atualizada
+        `<span class="label-cinza">Variação atualizada</span>
         <span class="info" data-bs-placement="bottom" title="Mostra quanto o preço subiu ou caiu (em VALOR) em relação à cotação anterior.">
             <i class="bi bi-info-circle"></i>
         </span>
         <br />
-        ${emojiVariacao} ${data.varBid}`;
+        <span class="texto-negrito">${emojiVariacao} ${data.varBid}</span>`;
 
         atualizarConversao();
         definirRecomendacao(data);
@@ -139,7 +139,7 @@ function definirRecomendacao(data) {
 
     if (variacao < 0) {
         contextoEconomico.innerHTML =
-            `✅ ${data.code} caiu ${variacao}%.
+            `✅ ${data.code} caiu <span class="texto-negrito">${variacao}%</span>.
             Converter hoje está mais barato!
             <span class="info" data-bs-placement="bottom" title="A queda indica redução no valor da moeda.">
                 <i class="bi bi-info-circle"></i>
@@ -147,7 +147,7 @@ function definirRecomendacao(data) {
     }
     else if (variacao > 0) {
         contextoEconomico.innerHTML =
-            `❌ ${data.code} subiu ${variacao}%.
+            `❌ ${data.code} subiu <span class="texto-negrito">${variacao}%</span>.
             Converter hoje está mais caro!
             <span class="info" data-bs-placement="bottom" title="Quando a moeda sobe, é necessário mais dinheiro para adquiri-la.">
                 <i class="bi bi-info-circle"></i>
@@ -155,7 +155,7 @@ function definirRecomendacao(data) {
     }
     else {
         contextoEconomico.innerHTML =
-            `➖ ${data.code} manteve-se estável.
+            `➖ ${data.code} manteve-se <span class="valor-variacao">estável</span>.
             Conversão sem impacto relevante!
             <span class="info" data-bs-placement="bottom" title="A variação foi mínima em relação ao dia anterior.">
                 <i class="bi bi-info-circle"></i>
