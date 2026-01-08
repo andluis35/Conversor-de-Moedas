@@ -1,23 +1,28 @@
 html, body {
-    height: 100%;
+    min-height: 100%;
     margin: 0;
 }
 
-.caixa-principal {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #d9d9d9;
+body {
     background: linear-gradient(90deg,rgba(217, 217, 217, 1) 0%, rgba(241, 239, 239, 1) 80%, rgba(217, 217, 217, 1) 100%);
+}
+
+.caixa-principal {
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 24px 0;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     background-color: #fefefe;
-    width: 420px;
+    width: 100%;
+    max-width: 420px;
     padding: 24px;
     border-radius: 16px;
     font-family: "Google Sans Flex", sans-serif;
@@ -30,9 +35,9 @@ html, body {
 }
 
 .entradas {
-    display: grid;
-    grid-template-columns: 10fr 1fr 10fr;
-    place-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: 12px;
 }
 
@@ -59,9 +64,10 @@ li {
 }
 
 #valor-a-converter, #valor-convertido {
-    width: 512px;
-    height: 256px;
-    font-size: 64px;
+    width: 100%;
+    max-width: 512px;
+    height: clamp(120px, 25vw, 256px);
+    font-size: clamp(32px, 8vw, 64px);
     font-weight: 200;
 }
 
@@ -70,10 +76,15 @@ li {
     height: 64px;
     background-color: #BBE0EF !important;
     border: 0 !important;
+    margin: 32px;
 }
 
 .botao-swap:hover {
     border: 1px dashed black !important;
+}
+
+.botao-swap:active {
+    background-color: #d9d9d9!important;
 }
 
 .resultado-taxas, .resultado-contextual {
@@ -106,7 +117,8 @@ li {
 }
 
 .botao-moeda, .dropdown-menu {
-    width: 512px;
+    width: 100%;
+    max-width: 512px;
 }
 
 .divisor-dropdown {
@@ -121,10 +133,6 @@ li {
 }
 
 .cabecalho {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 12px;
 }
 
@@ -204,4 +212,27 @@ li {
 
 .texto-negrito {
     font-weight: 800;
+}
+
+@media screen and (max-width: 768px) {
+    .entradas {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .botao-swap {
+        margin: 16px 0;
+        transform: rotate(90deg);
+    }
+    .titulo {
+        padding: 12px;
+    }
+    .resultado-taxas, .resultado-contextual {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        gap: 6px;
+    }
+    .creditos {
+        gap: 12px;
+    }
 }
