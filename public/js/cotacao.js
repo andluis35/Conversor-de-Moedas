@@ -91,7 +91,7 @@ async function buscarCotacao(de, para) {
         });
 
         const data = await res.json();
-        const valorVariacao = parseFloat(data.varBid).toFixed(2);
+        const valorVariacao = parseFloat(data.varBid);
         let emojiVariacao = '➖';
 
         if (valorVariacao < 0) {
