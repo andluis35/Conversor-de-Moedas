@@ -1,0 +1,26 @@
+<div class="entradas">
+    <div class="de">
+        <%- include('../partials/seletor-moeda', { label: 'De' }) %>
+
+        <input class="form-control caixa-texto" id="valor-a-converter" min="0" placeholder="0" type="number" />
+
+        <ul class="resultado-taxas">
+            <li class="taxa-conversao"></li>
+            <li class="variacao"></li>
+        </ul>
+    </div>
+
+    <button class="btn btn-secondary botao-swap info text-dark" title="Inverter moedas" type="button">
+        <i class="bi bi-arrow-left-right"></i>
+    </button>
+
+    <div class="para">
+        <%- include('../partials/seletor-moeda', { label: 'Para' }) %>
+
+        <input class="form-control caixa-texto" id="valor-convertido" placeholder="0" type="number" readonly />
+
+        <ul class="resultado-contextual">
+            <li class="recomendacao"></li>
+        </ul>
+    </div>
+</div>

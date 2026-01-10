@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <%- include('../partials/head') %>
+    </head>
+    <body>
+        <main class="caixa-principal">
+            <section class="container">
+                <%- include('../partials/header') %>
+                <%- include('../' + body) %>
+            </section>
+        </main>
+
+        <%- include('../partials/modal-erro') %>
+        <%- include('../partials/footer-scripts') %>
+    </body>
+</html>
