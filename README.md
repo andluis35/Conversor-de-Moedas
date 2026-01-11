@@ -8,6 +8,13 @@
 
 * The project focuses on combining good user experience, responsiveness, and clean code organization, using Node.js on the backend and a modern frontend interface.
 
+![Imagem do conversor em funcionamento](./public/images/imagens-conversor/001.png)
+![Imagem do conversor em funcionamento](./public/images/imagens-conversor/002.png)
+![Imagem do conversor em funcionamento](./public/images/imagens-conversor/003.png)
+![Imagem do conversor em funcionamento](./public/images/imagens-conversor/004.png)
+![Imagem do conversor em funcionamento](./public/images/imagens-conversor/005.png)
+![Imagem do conversor em funcionamento](./public/images/imagens-conversor/006.png)
+
 ---
 
 ## 🔧 Tecnologias Utilizadas / Tools & Technologies
