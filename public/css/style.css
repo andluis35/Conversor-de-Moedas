@@ -122,9 +122,9 @@ li {
 }
 
 .divisor-dropdown {
-    -webkit-user-select: none; /* Para navegadores baseados em WebKit (Chrome, Safari) */
-    -moz-user-select: none;    /* Para Firefox */
-    -ms-user-select: none;     /* Para Internet Explorer */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none; 
     background-color: #0f172a;
     color: #d9d9d9;
@@ -167,8 +167,7 @@ li {
   transition: background-color 0.15s ease-in-out;
 }
 
-.dropdown-menu .dropdown-item:hover,
-.dropdown-menu .dropdown-item:focus {
+.dropdown-menu .dropdown-item:hover, .dropdown-menu .dropdown-item:focus {
   background-color: #e7f1ff;
   color: #0d6efd;
 }
@@ -185,9 +184,7 @@ li {
   color: #fff;
 }
 
-.botao-moeda:hover,
-.botao-moeda:focus,
-.botao-moeda.show {
+.botao-moeda:hover, .botao-moeda:focus, .botao-moeda.show {
   background-color: #2563eb !important;
   border-color: #2563eb !important;
   color: #fff !important;
