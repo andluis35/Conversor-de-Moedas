@@ -38,7 +38,7 @@ conversor-de-moedas/
 ├─ views/                      # Templates EJS / EJS templates
 │  ├─ layouts/                 # Layout principal / Main layout
 │  ├─ pages/                   # Páginas / Pages
-|  ├─ partials/                # Componentes reutilizáveis / Reusable components  
+│  ├─ partials/                # Componentes reutilizáveis / Reusable components  
 │  └─ index.ejs                # Arquivo fonte EJS / EJS Source file
 ├─ index.js                    # Arquivo principal do servidor / Main server file
 ├─ package.json                # Dependências e scripts / Dependencies and scripts
