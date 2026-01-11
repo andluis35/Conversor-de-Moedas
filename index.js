@@ -3,6 +3,7 @@ import express from 'express';
 
 const app = express();
 const PORT = 3000;
+const API_BASE_URL = 'https://economia.awesomeapi.com.br/last';
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -14,7 +15,7 @@ app.get('/', async (req, res) => {
 
 app.post('/cotacao', async (req, res) => {
     const { de, para } = req.body;
-    const url = `https://economia.awesomeapi.com.br/last/${de}-${para}`;
+    const url = `${API_BASE_URL}/${de}-${para}`;
 
     try {
         const response = await axios.get(url);
