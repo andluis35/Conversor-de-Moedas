@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 atualizarCotacao();
                 atualizarConversao();
-            })
-        })
-    })
+            });
+        });
+    });
 
     valorInput.addEventListener('input', () => {
         atualizarConversao();
@@ -106,7 +106,6 @@ async function buscarCotacao(de, para) {
             emojiVariacao = '📈';
         }
 
-
         document.querySelector('.taxa-conversao').innerHTML =
         `<span class='label-cinza'>Taxa de Conversão</span>
         <span class="info" data-bs-placement="bottom" title="Indica quanto vale 1 unidade da moeda escolhida em relação à outra. É essa taxa que usamos para calcular o valor convertido.">
@@ -129,11 +128,9 @@ async function buscarCotacao(de, para) {
     catch (error) {
         console.log(error);
     }
-    
 }
 
 function definirRecomendacao(data) {
-
     const contextoEconomico = document.querySelector('.recomendacao');
     const variacao = parseFloat(data.pctChange).toFixed(2);
 
@@ -169,11 +166,8 @@ function mostrarErroCotacao() {
     document.querySelector('.recomendacao').innerHTML = `Essa conversão não está disponível no momento.`;
     document.getElementById('valor-convertido').value = '';
 
-    document.getElementById('modalErroMensagem').innerText =
-        'Não há cotação disponível para essa combinação de moedas.';
+    document.getElementById('modalErroMensagem').innerText = 'Não há cotação disponível para essa combinação de moedas.';
 
-    const modal = new bootstrap.Modal(
-        document.getElementById('modalErroCotacao')
-    );
+    const modal = new bootstrap.Modal(document.getElementById('modalErroCotacao'));
     modal.show();
 }
